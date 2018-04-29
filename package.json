@@ -4,17 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel --hmr-hostname 0.0.0.0 --open",
-    "build": "parcel build index.html",
+    "browser-sync": "browser-sync start --proxy \"localhost:1234\" --files \"**/*.css, **/*.js, **/*.html\"",
+    "dev": "parcel src/index.html -p 1234",
+    "build": "parcel build src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "framework7": "^2.2.1"
   },
   "devDependencies": {
     "babel-plugin-transform-es2015-classes": "^6.24.1",
     "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.23.7",
+    "less": "^2",
     "parcel-bundler": "^1.7.1"
   }
 }
