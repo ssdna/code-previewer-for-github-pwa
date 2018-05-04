@@ -1930,9 +1930,13 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
+framework7-icons@^0.9.1:
+  version "0.9.1"
+  resolved "http://registry.npm.taobao.org/framework7-icons/download/framework7-icons-0.9.1.tgz#01f089ce9f71eae112f516630b17009929a8b384"
+
 framework7@^2.2.1:
   version "2.2.1"
-  resolved "http://registry.npm.taobao.org/framework7/download/framework7-2.2.1.tgz#100048548de13849450b806d4cebafc35a4ddd78"
+  resolved "https://registry.yarnpkg.com/framework7/-/framework7-2.2.1.tgz#100048548de13849450b806d4cebafc35a4ddd78"
   dependencies:
     dom7 "^2.0.3"
     path-to-regexp "^2.1.0"
@@ -2656,9 +2660,9 @@ lcid@^1.0.0:
   dependencies:
     invert-kv "^1.0.0"
 
-less@^2:
+less@^2.7.3:
   version "2.7.3"
-  resolved "http://registry.npm.taobao.org/less/download/less-2.7.3.tgz#cc1260f51c900a9ec0d91fb6998139e02507b63b"
+  resolved "https://registry.yarnpkg.com/less/-/less-2.7.3.tgz#cc1260f51c900a9ec0d91fb6998139e02507b63b"
   optionalDependencies:
     errno "^0.1.1"
     graceful-fs "^4.1.2"
@@ -2754,6 +2758,10 @@ map-visit@^1.0.0:
   resolved "http://registry.npm.taobao.org/map-visit/download/map-visit-1.0.0.tgz#ecdca8f13144e660f1b5bd41f12f3479d98dfb8f"
   dependencies:
     object-visit "^1.0.0"
+
+material-design-icons@^3.0.1:
+  version "3.0.1"
+  resolved "http://registry.npm.taobao.org/material-design-icons/download/material-design-icons-3.0.1.tgz#9a71c48747218ebca51e51a66da682038cdcb7bf"
 
 math-expression-evaluator@^1.2.14:
   version "1.2.17"

@@ -43,46 +43,163 @@
                 <!-- Top Navbar -->
                 <div class="navbar">
                     <div class="navbar-inner sliding">
-                        <div class="title">Code Viewer for Github</div>
+                        <div class="left">
+                            <a href="#" class="link icon-only panel-open">
+                                <i class="icon f7-icons ios-only">menu_fill</i>
+                                <i class="icon f7-icons material-icons md-only">menu</i>
+                            </a>
+                        </div>
+                        <div class="title">Code Viewer</div>
+                        <div class="right">
+                            <a href="#" class="link icon-only popup-open" data-popup=".popup-search">
+                                <i class="icon f7-icons ios-only">search_fill</i>
+                                <i class="icon f7-icons material-icons md-only">search</i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Toolbar -->
-                <div class="toolbar toolbar-bottom-md">
+                <!-- Additional "tabbar-labels" class -->
+                <div class="toolbar toolbar-bottom-md tabbar-labels">
                     <div class="toolbar-inner">
-                        <!-- Toolbar links -->
-                        <a class="link">Link 1</a>
-                        <a class="link">Link 2</a>
+                        <a href="#tab-home" class="tab-link tab-link-active">
+                            <!-- Different icons for iOS and MD themes -->
+                            <i class="icon f7-icons ios-only">home_fill</i>
+                            <i class="icon material-icons md-only">home</i>
+                            <!-- Label text -->
+                            <span class="tabbar-label">Code</span>
+                        </a>
+                        <a href="#tab-profile" class="tab-link">
+                            <i class="icon f7-icons ios-only">person_fill</i>
+                            <i class="icon material-icons md-only">person</i>
+                            <span class="tabbar-label">Profile</span>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Scrollable page content -->
-                <div class="page-content hide-navbar-on-scroll">
-                    <div class="block">
-                        <p>Page content goes here</p>
-                        <p><a class="panel-open" href="#">Open Left Panel</a></p>
-                        <p><a class="panel-open" href="#" data-panel="right">Open Right Panel</a></p>
-                        <!-- Open About Popup -->
-                        <p><a class="popup-open" href="#" data-popup=".popup-about">Open About Popup</a></p>
+                <div class="fab fab-right-bottom">
+                    <a href="#">
+                        <!-- First icon is visible when Speed Dial actions are closed -->
+                        <i class="icon f7-icons ios-only">add</i>
+                        <i class="icon material-icons md-only">add</i>
 
-                        <p>Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p>
-                        <p>Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p>
-                        <p>Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p>
-                        <p>Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p>
-                        <p>Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p>
-                        <p>Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p><p>Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p>
+                        <!-- Second icon is visible when Speed Dial actions are opened -->
+                        <i class="icon f7-icons ios-only">close</i>
+                        <i class="icon material-icons md-only">add</i>
+                    </a>
+                    <!-- Speed Dial action buttons -->
+                    <div class="fab-buttons fab-buttons-top">
+                        <a href="#">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                    </div>
+                </div>
+
+                <!-- tabs is a direct child of page -->
+                <div class="tabs">
+                    <!-- Scrollable page content -->
+                    <div class="page-content tab tab-active hide-navbar-on-scroll" id="tab-home">
+                        <div class="block">
+                            <p>Page content goes here</p>
+                            <p><a class="panel-open" href="#">Open Left Panel</a></p>
+                            <p><a class="panel-open" href="#" data-panel="right">Open Right Panel</a></p>
+
+                            <i class="f7-icons">home</i>
+                            <p>Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p>
+                            <p>Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p>
+                            <p>Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p>
+                            <p>Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p>
+                            <p>Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p>
+                            <p>Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p><p>Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p>
+                        </div>
+                    </div>
+
+                    <div class="page-content tab hide-navbar-on-scroll" id="tab-profile">
+                        <div class="block">
+                            <p>Profile Page</p>
+
+                            <a href="https://github.com/login/oauth/authorize?client_id=592f85e667963bc1a594&state=fyt" class="link external"><i class="f7-icons">social_github_fill</i></a>
+
+                            <p>Profile Page, Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p>
+                            <p>Profile Page, Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p>
+                            <p>Profile Page, Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p>
+                            <p>Profile Page, Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p><p>Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </div>
 
-        <div class="popup popup-about">
-            <div class="block">
-                <p>About</p>
-                <!-- Close Popup -->
-                <p><a class="link popup-close" href="#">Close popup</a></p>
-                <p>Lorem ipsum dolor sit amet...</p>
+        <!-- Search popup-->
+        <div class="popup popup-search">
+            <div class="view">
+                <div class="pages">
+                    <div class="page navbar-fixed">
+                        <!-- Searchbar with auto init -->
+                        <form class="searchbar">
+                            <div class="searchbar-inner">
+                                <div class="searchbar-input-wrap">
+                                    <input type="search" placeholder="Search">
+                                    <a href="#" class="search-clear"></a>
+                                    <i class="searchbar-icon"></i>
+                                    <span class="input-clear-button"></span>
+                                </div>
+                                <span class="searchbar-disable-button">Cancel</span>
+                            </div>
+                        </form>
+
+                        <div class="page-content">
+                            <!-- Searchbar backdrop -->
+                            <div class="searchbar-backdrop"></div>
+                            <!-- hide-on-search element -->
+
+                            <div class="block searchbar-hide-on-search">
+                                <p>This block will be hidden on search. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <a class="popup-close">close</a>
+
+                            </div>
+
+                            <script type="text/template7" id="search-template">
+                                <p>Hello, my name is {{name}} and i am {{age}} years old</p>
+                            </script>
+                            <!-- search target list -->
+                            <!--<div class="list media-list chevron-center searchbar-found">-->
+                            <div class="list media-list chevron-center">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="item-link item-content">
+                                            <!--<div class="item-media">
+                                                <img src="path/to/img.jpg">
+                                            </div>-->
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title">
+                                                        vuejs/vue
+                                                    </div>
+                                                    <div class="item-after my-search-item-icon">
+                                                        <i class="material-icons size-12">lens</i>
+                                                        <span>JavaScritp</span>
+                                                        &nbsp&nbsp
+                                                        <i class="material-icons size-14">star</i>
+                                                        <span>3222</span>
+                                                    </div>
+                                                </div>
+                                                <div class="item-text">
+                                                    Additional description textAdditional description textAdditional description textAdditional description textAdditional description text
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Nothing found message -->
+                            <div class="block searchbar-not-found">
+                                <div class="block-inner">Nothing found</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

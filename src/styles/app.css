@@ -19,6 +19,10 @@ li {
     list-style-type: none;
 }
 
+p {
+    margin: 0;
+}
+
 .header {
     width: 100%;
     height: 56px;
@@ -153,3 +157,47 @@ li {
 .loader {
 
 }
+
+
+/*==============================
+    Search popup styling
+==============================*/
+.popup .searchbar-input {
+    height: 38px;
+}
+.popup .searchbar {
+    height: 100%;
+}
+.popup .list-block {
+    margin: 0;
+}
+.popup .list-block span {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.54);
+    margin-left: 5px;
+}
+.popup .list-block .item-link .item-inner {
+    background: none;
+}
+.popup .preloader {
+    position: absolute;
+    right: 40px;
+    width: 24px;
+    height: 24px;
+    top: 50%;
+    margin-top: -12px;
+    opacity: 0.8;
+    pointer-events: none;
+    display: none;
+}
+
+/*==============================
+    Icon styling
+==============================*/
+.size-14 { font-size: 14px }
+.size-16 { font-size: 16px }
+.size-18 { font-size: 18px }
+.size-22 { font-size: 22px }
+.size-25 { font-size: 25px }
+.size-29 { font-size: 29px }
+.size-50 { font-size: 50px }
