@@ -15,30 +15,67 @@ import 'material-design-icons/iconfont/material-icons.css';
 // Import additional components
 import Panel from 'framework7/dist/components/panel/panel.js';
 import Popup from 'framework7/dist/components/popup/popup.js';
+import Popover from 'framework7/dist/components/popover/popover.js';
 import Searchbar from 'framework7/dist/components/searchbar/searchbar.js';
 import Tabs from 'framework7/dist/components/tabs/tabs.js';
 import FAB from 'framework7/dist/components/fab/fab.js';
-// import Icon from 'framework7/dist/components/icon/icon.js';
-// import 'framework7/dist/components/panel/panel.less'
+import Input from 'framework7/dist/components/input/input.js';
 
 
-import '../styles/font.css'
-import '../styles/hack.css'
+// css
+import '../styles/index.css';
+
+// tpl
+import personalInfoTemplate from '../templates/personal.tpl.js';
+import reposListTemplate from '../templates/repos.tpl.js';
 
 /* =================
    import js module
    ================= */
-import Auth from '../scripts/auth.js';
-import http from '../scripts/http.js';
+import Auth from './auth.js';
+import http from './http.js';
+import {appDB} from './db.js';
+import {
+    getCurrentUserInfo,
+    getCurrentUserRepos,
+    searchRepos
+} from './api.js';
 
-if (Auth.check()) {
-    Auth.getAccessToken();
-}
+window.db = appDB;
+window.h = http;
 
-// import Popup from 'framework7/dist/components/popup/popup.js';
+
+const personalInfo = Template7.compile(personalInfoTemplate);
+const reposList = Template7.compile(reposListTemplate);
+
+
+Auth.checkLocalAccessToken()
+    .then(val => console.log(val));
+
+getCurrentUserInfo()
+    .then(res => {
+        const html = personalInfo(res);
+        $$('#personal-profile').html(html);
+    });
+getCurrentUserRepos()
+    .then(res => {
+        const html = reposList(res);
+        $$('#repos-list').html(html);
+    });
+// searchRepos({q: 'vue'})
+//     .then(res => {
+//         const html = reposList({repos: res.items});
+//         $$('#search-repos-lis').html(html);
+//         console.log(res, html);
+//     });
+
+
+// if (Auth.checkOauthCode()) {
+//     Auth.getAccessToken();
+// }
 
 // Install F7 Components using .use() method on class:
-Framework7.use([Panel, Popup, Searchbar, Tabs, FAB]);
+Framework7.use([Panel, Popup, Searchbar, Tabs, FAB, Input, Popover]);
 
 // import Panel from './panel';
 // import $ from './$';
@@ -63,27 +100,45 @@ const app = new Framework7({
     toolbar: {
         hideOnPageScroll: true,
     },
+    input: {
+    }
 });
-
-// Compile templates once on app load/init
-app.searchTemplate = $$('script#search-template').html();
-app.compiledSearchTemplate = Template7.compile(app.searchTemplate);
-console.log(app.compiledSearchTemplate({name: 'fyt'}));
 
 // create searchbar
 var searchbar = app.searchbar.create({
     el: '.searchbar',
-    searchContainer: '.list',
-    searchIn: '.item-title',
+    customSearch: true,
+    searchContainer: '.search-result',
     on: {
         search(sb, query, previousQuery) {
-            console.log(query, previousQuery);
+            searchRepos({q: query})
+                .then(res => {
+                    const html = reposList(res.items);
+                    $$('#search-repos-list').html(html);
+                    console.log(res, html);
+                });
         }
     }
 });
 
 window.a = app;
 
+$$('#bt-save-token').on('click', (e) => {
+    const f7Input = $$('#f7-input-access-token');
+    const input = $$('#input-access-token');
+
+    app.input.validate(f7Input);
+
+    if (!f7Input.hasClass('item-input-invalid')) {
+        appDB.set('app-access-token', input.val());
+        appDB.get('app-access-token').then(val => console.log(val));
+    }
+});
+
+
+// $$('.item-input').on('input:notempty', function (el) {
+//     console.log('input:notempt', el);
+// });
 
 // const mainView = app.views.create('.view-main');
 

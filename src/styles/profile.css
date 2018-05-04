@@ -1,0 +1,18 @@
+.profile-card .card-header {
+    display: block;
+    padding: 10px;
+}
+.profile-card .profile-avatar {
+    padding-top: 2px;
+    float: left;
+}
+.profile-card .profile-name {
+    margin-left: 44px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.profile-card .profile-date {
+    margin-left: 44px;
+    font-size: 12px;
+    color: #8e8e93;
+}

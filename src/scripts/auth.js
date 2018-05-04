@@ -1,9 +1,10 @@
 import http, {queryStringify} from './http.js';
+import {appDB} from "./db.js";
 import {client_id, client_secret} from "../../token";
 
 const Auth = {
     params: {},
-    check () {
+    checkOauthCode() {
         const queryString = window.location.search.slice(1);
         const params = queryString
             .split('&')
@@ -15,7 +16,10 @@ const Auth = {
         Auth.params = params;
         return params.code ? true : false;
     },
-    getAccessToken () {
+    checkLocalAccessToken() {
+        return appDB.get('app-access-token');
+    },
+    getAccessToken() {
         const s = http({
             method: 'post',
             url: 'https://github.com/login/oauth/access_token',

@@ -5,3 +5,8 @@
 .my-search-item-icon {
     align-items: center;
 }
+
+.item-input-info {
+    display: flex;
+    align-items: flex-start;
+}

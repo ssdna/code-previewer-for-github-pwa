@@ -62,14 +62,14 @@
                 <!-- Additional "tabbar-labels" class -->
                 <div class="toolbar toolbar-bottom-md tabbar-labels">
                     <div class="toolbar-inner">
-                        <a href="#tab-home" class="tab-link tab-link-active">
+                        <a href="#tab-home" class="tab-link">
                             <!-- Different icons for iOS and MD themes -->
                             <i class="icon f7-icons ios-only">home_fill</i>
                             <i class="icon material-icons md-only">home</i>
                             <!-- Label text -->
                             <span class="tabbar-label">Code</span>
                         </a>
-                        <a href="#tab-profile" class="tab-link">
+                        <a href="#tab-profile" class="tab-link tab-link-active">
                             <i class="icon f7-icons ios-only">person_fill</i>
                             <i class="icon material-icons md-only">person</i>
                             <span class="tabbar-label">Profile</span>
@@ -98,7 +98,7 @@
                 <!-- tabs is a direct child of page -->
                 <div class="tabs">
                     <!-- Scrollable page content -->
-                    <div class="page-content tab tab-active hide-navbar-on-scroll" id="tab-home">
+                    <div class="page-content tab hide-navbar-on-scroll" id="tab-home">
                         <div class="block">
                             <p>Page content goes here</p>
                             <p><a class="panel-open" href="#">Open Left Panel</a></p>
@@ -114,16 +114,44 @@
                         </div>
                     </div>
 
-                    <div class="page-content tab hide-navbar-on-scroll" id="tab-profile">
+                    <div class="page-content tab tab-active hide-navbar-on-scroll" id="tab-profile">
                         <div class="block">
                             <p>Profile Page</p>
 
                             <a href="https://github.com/login/oauth/authorize?client_id=592f85e667963bc1a594&state=fyt" class="link external"><i class="f7-icons">social_github_fill</i></a>
 
-                            <p>Profile Page, Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p>
-                            <p>Profile Page, Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p>
-                            <p>Profile Page, Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p>
-                            <p>Profile Page, Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p><p>Quis omnis, quam maiores voluptates vero atque porro? Soluta modi dolore eum dolor iste eos perspiciatis vero porro aliquam officia deleniti, cumque rem, consequatur, ea ipsa temporibus dicta architecto saepe.</p>
+
+                            <div class="block-title">GitHub Access</div>
+                            <div class="list no-hairlines-md">
+                                <ul>
+                                    <li class="item-content item-input item-input-with-info" id="f7-input-access-token">
+                                        <div class="item-inner">
+                                            <div class="item-title item-floating-label">Token</div>
+                                            <div class="item-input-wrap">
+                                                <input type="text" id="input-access-token" placeholder="Your access token" required validate pattern="[\d\w]{40}" data-error-message="Length = 40 and Only with numbers and letters please!">
+                                                <span class="input-clear-button"></span>
+                                                <div class="item-input-info">
+                                                    <span>Token with on-scope is recommended.</span>
+                                                    <a class="link popover-open" data-popover=".popover-about" href="https://developer.github.com/apps/building-oauth-apps/scopes-for-oauth-apps/">
+                                                        <i class="icon f7-icons size-14 ios-only">help_fill</i>
+                                                        <i class="icon material-icons size-14 md-only">help</i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item-content">
+                                        <div class="item-inner">
+                                            <button class="col button button-fill" id="bt-save-token">Save Token</button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div id="personal-profile"></div>
+                            <div id="repos-list"></div>
+
                         </div>
                     </div>
                 </div>
@@ -155,50 +183,34 @@
                             <!-- hide-on-search element -->
 
                             <div class="block searchbar-hide-on-search">
-                                <p>This block will be hidden on search. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                 <a class="popup-close">close</a>
-
                             </div>
 
-                            <script type="text/template7" id="search-template">
-                                <p>Hello, my name is {{name}} and i am {{age}} years old</p>
-                            </script>
                             <!-- search target list -->
-                            <!--<div class="list media-list chevron-center searchbar-found">-->
-                            <div class="list media-list chevron-center">
-                                <ul>
-                                    <li>
-                                        <a href="#" class="item-link item-content">
-                                            <!--<div class="item-media">
-                                                <img src="path/to/img.jpg">
-                                            </div>-->
-                                            <div class="item-inner">
-                                                <div class="item-title-row">
-                                                    <div class="item-title">
-                                                        vuejs/vue
-                                                    </div>
-                                                    <div class="item-after my-search-item-icon">
-                                                        <i class="material-icons size-12">lens</i>
-                                                        <span>JavaScritp</span>
-                                                        &nbsp&nbsp
-                                                        <i class="material-icons size-14">star</i>
-                                                        <span>3222</span>
-                                                    </div>
-                                                </div>
-                                                <div class="item-text">
-                                                    Additional description textAdditional description textAdditional description textAdditional description textAdditional description text
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
+                            <div class="search-result" id="search-repos-list">
                             </div>
                             <!-- Nothing found message -->
-                            <div class="block searchbar-not-found">
-                                <div class="block-inner">Nothing found</div>
-                            </div>
+                            <!--<div class="block searchbar-not-found">-->
+                                <!--<div class="block-inner">Nothing found</div>-->
+                            <!--</div>-->
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popovers -->
+        <div class="popover popover-about">
+            <!-- Popover's angle arrow -->
+            <div class="popover-angle"></div>
+            <div class="popover-inner">
+                <div class="block">
+                    <p>We need your <a>GitHub Access Token</a> with <a>no-scope</a> access to get repos data on github.
+                        <a class="link external" target="_blank" href="https://developer.github.com/apps/building-oauth-apps/scopes-for-oauth-apps/">
+                            <i class="icon f7-icons size-16 ios-only">info_fill</i>
+                            <i class="icon material-icons size-16 md-only">info</i>
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
