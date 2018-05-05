@@ -62,7 +62,9 @@ http.get = function (url, params, options) {
 export const queryStringify = function (obj = {}) {
     let params = [];
     for (let key of Object.keys(obj)) {
-        params.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
+        if (obj[key]) {
+            params.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
+        }
     }
     return params.join('&');
 };

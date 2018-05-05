@@ -16,3 +16,21 @@ export const searchRepos = (params) => {
     });
 };
 
+export const getContents = (params) => {
+    if (!params.path) {
+        params.path = '';
+    }
+    return http.get(
+        `https://api.github.com/repos/${params.owner}/${params.repo}/contents/${params.path}`,
+        {ref: params.ref}
+    );
+};
+
+export const getTree = (params) => {
+    return http.get(`https://api.github.com/repos/${params.owner}/${params.repo}/git/trees/${params.tree_sha}`)
+};
+
+export const getTreeRecursive = (params) => {
+    return http.get(`https://api.github.com/repos/${params.owner}/${params.repo}/git/trees/${params.tree_sha}?recursive=1`)
+};
+

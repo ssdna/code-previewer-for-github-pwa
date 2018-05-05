@@ -1,8 +1,8 @@
 export default `
-<div class="list media-list chevron-center">
+<div class="list media-list chevron-center repos-list">
     <ul>
         {{#each this}}
-        <li>
+        <li data-title="{{owner.login}}||{{name}}||{{default_branch }}">
             <a href="#" class="item-link item-content">
                 <!--<div class="item-media">
                     <img src="path/to/img.jpg">
